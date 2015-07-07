@@ -1,5 +1,5 @@
 SNAPHU
-Statistical-Cost, Netowrk-Flow Algorithm for Phase Unwrapping
+Statistical-Cost, Network-Flow Algorithm for Phase Unwrapping
 Author: Curtis W. Chen
 Version 1.4.2, January 2003
 
@@ -28,27 +28,9 @@ well.  Thanks, and good luck with the unwrapping.
 Notes on Compiling
 ------------------
 
-To compile, edit the Makefile in the src directory to specify your
-compiler, the optimization flags, and the desired directory for the
-executable.  After that, run make and see what happens.
-
-Most of the code should be pretty standard, but a few of the library
-functions that are used may be unavailable on some systems.  In some
-cases, the problem code may only perform error checking, so you might
-be able to comment out the unavailable functions without ill effects.
-For example, the IsFinite() function in snaphu_util.c is a wrapper for
-calling the library function finite(), which is unavailable on some
-systems.  You can modify IsFinite() to use an alternate implementation
-that you do have, or you can have it always return TRUE.
-
-The code was developed mainly with gcc, but has been tested with a
-number of vendor C compilers.  The latter tend to produce faster
-executables.
-
-I have not experimented with parallelizing compilers.  The code is
-written to use multiple processors in tile mode by forking copies of
-itself to unwrap each tile.  The structure of the solver does not lend
-itself to easy parallelization for a single tile, however.
+To compile, cd to src directory, make && make install. This repository
+has been tested and working on Mac OS X 10.10.4, requires XCode Command
+Line Tools.
 
 The CS2 MCF solver module is governed by the terms of the original
 authors (see the README.copyright file).  In order to compile snaphu
