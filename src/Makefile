@@ -13,12 +13,12 @@
 # If you specify -D NO_CS2, the program will be compiled without the
 # CS2 MCF solver module.
 
-CC		=	cc 
+CC		=	clang 
 CFLAGS		=	-O3   # -D NO_CS2
 LIBS		=	-lm 
 BINDIR		=	../bin
 INSTALLDIR	=	/usr/local/bin
-MANDIR		=	/usr/local/man
+MANDIR		=	/usr/share/man
 SNAPHU		=	$(BINDIR)/snaphu
 SNAPHUMAN	=	../man/man1/snaphu.1
 OBJS		=	snaphu_tile.o \

@@ -749,7 +749,7 @@ void CheckParams(infileT *infiles, outfileT *outfiles,
     fprintf(sp0,"Lp-norm parameter p should be nonnegative\n");
     exit(ABNORMAL_EXIT);
   }
-  if((params->costmode==TOPO && params->maxflow*params->nshortcycle)
+  if(params->costmode==TOPO && ceil(params->maxflow*params->nshortcycle)
      >POSSHORTRANGE){
     fprintf(sp0,"maxflow exceeds range of short int for given nshortcycle\n");
     exit(ABNORMAL_EXIT);
